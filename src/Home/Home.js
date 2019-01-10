@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
+import Collector from '../Collector/Collector';
 
 class Home extends Component {
   login() {
     this.props.auth.login();
   }
   render() {
-    const { isAuthenticated } = this.props.auth;
+    const { isAuthenticated, getIdToken } = this.props.auth;
     return (
       <div className="container">
         {
           isAuthenticated() && (
-              <h4>
-                You are logged in!
-              </h4>
+              <Collector token={getIdToken()}></Collector>
             )
         }
         {

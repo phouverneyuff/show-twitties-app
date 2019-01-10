@@ -3,7 +3,7 @@ import React, {
 } from 'react'
 
 const API = 'http://127.0.0.1.xip.io/twitter/';
-const DEFAULT_QUERY = 'tag/';
+const DEFAULT_QUERY = 'country/';
 
 class Collector extends Component {
     constructor(props) {
@@ -45,8 +45,8 @@ class Collector extends Component {
         return (
           <ul>
             {twitties.map(tweet =>
-              <li key={tweet.idStr}>
-                <h4> {tweet.text} </h4>
+              <li key={tweet.languageCode}>
+                <h4> {tweet.languageCode} - {tweet.total} </h4>
               </li>
             )}
           </ul>
